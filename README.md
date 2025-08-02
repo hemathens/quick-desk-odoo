@@ -264,12 +264,12 @@ Contributions welcome! Please follow \[CONTRIBUTING.md] and the repository guide
 [![GitHub](https://img.shields.io/badge/GitHub-hemathens-181717?logo=github)](https://github.com/hemathens)
 
 • **Laukik Rajput**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hem%20Ajit%20Patel-0A66C2?logo=linkedin)](https://www.linkedin.com/in/laukik-rajput-95bb48300)
-[![GitHub](https://img.shields.io/badge/GitHub-hemathens-181717?logo=github)](https://github.com/lokixshr)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Laukik%20Rajput-0A66C2?logo=linkedin)](https://www.linkedin.com/in/laukik-rajput-95bb48300)
+[![GitHub](https://img.shields.io/badge/GitHub-lokixshr-181717?logo=github)](https://github.com/lokixshr)
 
 • **Mihir Rabari** – [https://github.com/Mihir-Rabari](https://github.com/Mihir-Rabari)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hem%20Ajit%20Patel-0A66C2?logo=linkedin)](https://www.linkedin.com/in/mihir-rabari)
-[![GitHub](https://img.shields.io/badge/GitHub-hemathens-181717?logo=github)](https://github.com/Mihir-Rabari)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mihir%20Rabari-0A66C2?logo=linkedin)](https://www.linkedin.com/in/mihir-rabari)
+[![GitHub](https://img.shields.io/badge/GitHub-Mihir-Rabari-181717?logo=github)](https://github.com/Mihir-Rabari)
 
 ---
 
@@ -283,4 +283,4 @@ Contributions welcome! Please follow \[CONTRIBUTING.md] and the repository guide
 
 ## ⚖️ License
 
-MIT License © 2025 [drakshushi](https://creativecommons.org/licenses/by/4.0/)
+[MIT-License©2025-drakshushi](https://creativecommons.org/licenses/by/4.0/)
