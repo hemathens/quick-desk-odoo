@@ -29,6 +29,22 @@ router.get('/admin/overview', authMiddleware, roleMiddleware('admin'), dashboard
 
 /**
  * @swagger
+ * /dashboard/agent/overview:
+ *   get:
+ *     summary: Get agent-specific stats and workload
+ *     tags: [Dashboard]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Agent stats
+ *       403:
+ *         description: Forbidden
+ */
+router.get('/agent/overview', authMiddleware, roleMiddleware('agent', 'admin'), dashboardController.agentOverview);
+
+/**
+ * @swagger
  * /dashboard/user/stats:
  *   get:
  *     summary: Get user-specific stats
@@ -42,5 +58,42 @@ router.get('/admin/overview', authMiddleware, roleMiddleware('admin'), dashboard
  *         description: Unauthorized
  */
 router.get('/user/stats', authMiddleware, dashboardController.userStats);
+
+/**
+ * @swagger
+ * /dashboard/tickets:
+ *   get:
+ *     summary: Get tickets with filters and pagination
+ *     tags: [Dashboard]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *         description: Page number
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *         description: Number of tickets per page
+ *       - in: query
+ *         name: status
+ *         schema:
+ *           type: string
+ *         description: Filter by ticket status
+ *       - in: query
+ *         name: search
+ *         schema:
+ *           type: string
+ *         description: Search in title and description
+ *     responses:
+ *       200:
+ *         description: Tickets list with pagination
+ *       401:
+ *         description: Unauthorized
+ */
+router.get('/tickets', authMiddleware, dashboardController.getTickets);
 
 module.exports = router; 

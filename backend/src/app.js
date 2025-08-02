@@ -23,6 +23,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/questions', require('./routes/questions'));
 app.use('/dashboard', require('./routes/dashboard'));
 app.use('/admin', require('./routes/admin'));
+app.use('/tickets', require('./routes/tickets'));
 
 // Health check
 app.get('/', (req, res) => res.send('QuickDesk API running'));
