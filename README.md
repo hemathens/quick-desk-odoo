@@ -12,29 +12,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Description](#description)
-2. [Live Demo](#live-demo)
-3. [Tech Stack](#tech-stack)
-4. [Architecture](#architecture)
-5. [Folder Structure](#folder-structure)
-6. [Features](#features)
-7. [Use Cases](#use-cases)
-8. [Screenshots](#screenshots)
-9. [Getting Started](#getting-started)
-10. [Configuration](#configuration)
-11. [Testing](#testing)
-12. [Monitoring & Security](#monitoring--security)
-13. [Contributing](#contributing)
-14. [Roadmap](#roadmap)
-15. [Team & Credits](#team--credits)
-16. [Contact & Support](#contact--support)
-17. [License](#license)
-
-
----
-
 ## 📄 Description
 
 QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, delivering seamless ticketing, SLA automation, and analytics within your ERP.
