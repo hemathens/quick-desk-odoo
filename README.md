@@ -77,10 +77,10 @@ QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, deliverin
 │  End Users   │      │  Support     │      │  Admins      │
 │  (Web/Email) │      │  Agents      │      │  Odoo UI     │
 └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
-       │                      │                      │
-       ▼                      ▼                      ▼
-┌─────────────────────────────────────────────────────────┐
-│                    QuickDesk Module                    │
+       │                     │                     │
+       ▼                     ▼                     ▼
+┌───────────────────────────────────────────────────────┐
+│                    QuickDesk Module                   │
 │ ┌───────────┐  ┌────────┐  ┌────────┐  ┌───────────┐  │
 │ │ Ticket    │  │ SLA    │  │ Alerts │  │ Analytics │  │
 │ │ Manager   │  │ Engine │  │ System │  │ Dashboard │  │
@@ -92,8 +92,8 @@ QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, deliverin
          └────────────────┬───────────────────┘
                           │
      ┌────────────────────┴───────────────────────┐
-     │ PostgreSQL 14+       │ Redis & Celery       │
-     │ Metrics & Logs       │ API Services         │
+     │ PostgreSQL 14+       │ Redis & Celery      │
+     │ Metrics & Logs       │ API Services        │
      └────────────────────────────────────────────┘
 ```
 
@@ -258,18 +258,20 @@ Contributions welcome! Please follow \[CONTRIBUTING.md] and the repository guide
 ## 👥 Team & Credits
 
 **Team Name:** Drakshushi
-• **Hem Patel**
-[![Kaggle Profile](https://img.shields.io/badge/Kaggle-hem%20ajit%20patel-20BEFF?logo=kaggle)](https://www.kaggle.com/hemajitpatel)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hem%20Ajit%20Patel-0A66C2?logo=linkedin)](https://www.linkedin.com/in/hem-patel19)
+
+### • **Hem Patel**  
+[![Kaggle Profile](https://img.shields.io/badge/Kaggle-hem%20ajit%20patel-20BEFF?logo=kaggle)](https://www.kaggle.com/hemajitpatel)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hem%20Ajit%20Patel-0A66C2?logo=linkedin)](https://www.linkedin.com/in/hem-patel19)  
 [![GitHub](https://img.shields.io/badge/GitHub-hemathens-181717?logo=github)](https://github.com/hemathens)
 
-• **Laukik Rajput**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Laukik%20Rajput-0A66C2?logo=linkedin)](https://www.linkedin.com/in/laukik-rajput-95bb48300)
+### • **Laukik Rajput**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Laukik%20Rajput-0A66C2?logo=linkedin)](https://www.linkedin.com/in/laukik-rajput-95bb48300)  
 [![GitHub](https://img.shields.io/badge/GitHub-lokixshr-181717?logo=github)](https://github.com/lokixshr)
 
-• **Mihir Rabari** – [https://github.com/Mihir-Rabari](https://github.com/Mihir-Rabari)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mihir%20Rabari-0A66C2?logo=linkedin)](https://www.linkedin.com/in/mihir-rabari)
-[![GitHub](https://img.shields.io/badge/GitHub-Mihir-Rabari-181717?logo=github)](https://github.com/Mihir-Rabari)
+### • **Mihir Rabari**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mihir%20Rabari-0A66C2?logo=linkedin)](https://www.linkedin.com/in/mihir-rabari)  
+[![GitHub](https://img.shields.io/badge/GitHub-Mihir--Rabari-181717?logo=github)](https://github.com/Mihir-Rabari)
+
 
 ---
 
