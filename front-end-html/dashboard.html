@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <span class="logo">App Logo</span>
+                </div>
+                <div class="nav-right">
+                    <button onclick="location.href='profile.html'">Profile</button>
+                    <button onclick="location.href='search.html'">Search</button>
+                    <button onclick="location.href='settings.html'">Settings</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's what's happening.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button onclick="location.href='create.html'">Create New</button>
+                            <button onclick="location.href='search.html'">Search</button>
+                            <button onclick="location.href='reports.html'">View Reports</button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <span class="activity-icon">📄</span>
+                                <div class="activity-content">
+                                    <p>Document created</p>
+                                    <small>2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">👤</span>
+                                <div class="activity-content">
+                                    <p>Profile updated</p>
+                                    <small>1 day ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔍</span>
+                                <div class="activity-content">
+                                    <p>Search performed</p>
+                                    <small>3 days ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">15</div>
+                                <div class="stat-label">Total Items</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">7</div>
+                                <div class="stat-label">Pending</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Quick Links</h3>
+                        <div class="quick-links">
+                            <a href="profile.html">View Profile</a>
+                            <a href="settings.html">Account Settings</a>
+                            <a href="help.html">Help & Support</a>
+                            <a href="notifications.html">Notifications</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                alert('Logged out successfully!');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

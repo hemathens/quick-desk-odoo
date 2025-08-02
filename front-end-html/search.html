@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <span class="logo">App Logo</span>
+                </div>
+                <div class="nav-right">
+                    <button onclick="location.href='dashboard.html'">Dashboard</button>
+                    <button onclick="location.href='profile.html'">Profile</button>
+                    <button onclick="location.href='settings.html'">Settings</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-header">
+                    <h1>Search</h1>
+                    <p>Find what you're looking for</p>
+                </div>
+
+                <div class="search-form">
+                    <form id="searchForm">
+                        <div class="search-input-group">
+                            <input type="text" id="searchInput" placeholder="Enter your search query..." required>
+                            <button type="submit" class="search-btn">🔍</button>
+                        </div>
+                        <div class="search-filters">
+                            <select id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="documents">Documents</option>
+                                <option value="users">Users</option>
+                                <option value="projects">Projects</option>
+                                <option value="files">Files</option>
+                            </select>
+                            <select id="sortBy">
+                                <option value="relevance">Sort by Relevance</option>
+                                <option value="date">Sort by Date</option>
+                                <option value="name">Sort by Name</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="search-results" id="searchResults">
+                    <div class="results-info">
+                        <p id="resultsCount">Enter a search term to get started</p>
+                    </div>
+                    
+                    <div class="results-list" id="resultsList">
+                        <!-- Results will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                alert('Logged out successfully!');
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Sample search data
+        const sampleData = [
+            { id: 1, title: "Project Documentation", category: "documents", date: "2024-01-15", content: "Comprehensive project documentation for the new application" },
+            { id: 2, title: "User Manual", category: "documents", date: "2024-01-20", content: "Step-by-step guide for end users" },
+            { id: 3, title: "John Doe", category: "users", date: "2024-01-10", content: "Software Developer" },
+            { id: 4, title: "Project Alpha", category: "projects", date: "2024-01-25", content: "Next generation web application" },
+            { id: 5, title: "Design Files", category: "files", date: "2024-01-18", content: "UI/UX design resources and mockups" },
+            { id: 6, title: "Meeting Notes", category: "documents", date: "2024-01-22", content: "Weekly team meeting discussions" },
+            { id: 7, title: "Jane Smith", category: "users", date: "2024-01-12", content: "Project Manager" },
+            { id: 8, title: "Project Beta", category: "projects", date: "2024-01-30", content: "Mobile application development" }
+        ];
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            performSearch();
+        });
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            if (!query.trim()) {
+                document.getElementById('resultsCount').textContent = 'Please enter a search term';
+                document.getElementById('resultsList').innerHTML = '';
+                return;
+            }
+
+            // Filter results
+            let results = sampleData.filter(item => {
+                const matchesQuery = item.title.toLowerCase().includes(query) || 
+                                   item.content.toLowerCase().includes(query);
+                const matchesCategory = !category || item.category === category;
+                return matchesQuery && matchesCategory;
+            });
+
+            // Sort results
+            results.sort((a, b) => {
+                switch(sortBy) {
+                    case 'date':
+                        return new Date(b.date) - new Date(a.date);
+                    case 'name':
+                        return a.title.localeCompare(b.title);
+                    default: // relevance
+                        return 0;
+                }
+            });
+
+            displayResults(results, query);
+        }
+
+        function displayResults(results, query) {
+            const resultsCount = document.getElementById('resultsCount');
+            const resultsList = document.getElementById('resultsList');
+
+            resultsCount.textContent = `Found ${results.length} result(s) for "${query}"`;
+
+            if (results.length === 0) {
+                resultsList.innerHTML = '<div class="no-results">No results found. Try adjusting your search terms.</div>';
+                return;
+            }
+
+            resultsList.innerHTML = results.map(result => `
+                <div class="result-item">
+                    <div class="result-header">
+                        <h3 class="result-title">${highlightText(result.title, query)}</h3>
+                        <span class="result-category">${result.category}</span>
+                    </div>
+                    <p class="result-content">${highlightText(result.content, query)}</p>
+                    <div class="result-footer">
+                        <span class="result-date">${formatDate(result.date)}</span>
+                        <button class="view-btn" onclick="viewResult(${result.id})">View</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function highlightText(text, query) {
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        function viewResult(id) {
+            alert(`Viewing result with ID: ${id}`);
+            // In a real application, this would navigate to the specific item
+        }
+    </script>
+</body>
+</html>
