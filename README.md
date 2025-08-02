@@ -160,9 +160,10 @@ QuickDesk tailors its experience to three main roles, each with focused UI and n
 ---
 
 ## 📸 Screenshots
+**Preview of dashboard**
 
-![Dashboard](./frontend/portal/public/images/screenshot-dashboard.png)
-![Ticket View](./frontend/portal/public/images/screenshot-ticket.png)
+![Dashboard](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2015.09.58_0d639d97.jpg)
+![Ticket View](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2015.09.58_ef4e7f38.jpg)
 
 ---
 
