@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Docker Build](https://img.shields.io/badge/Docker-Build-blue?logo=docker)](https://hub.docker.com/)
-[![Made with Odoo](https://img.shields.io/badge/Made%20with-Odoo-714B67?logo=odoo)](https://www.odoo.com/)
+[![Made for Odoo](https://img.shields.io/badge/Made%20with-Odoo-714B67?logo=odoo)](https://www.odoo.com/)
 
 # QuickDesk - AI-Enhanced Help Desk for Odoo
 
