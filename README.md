@@ -83,6 +83,11 @@ QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, deliverin
 [View detailed design](docs/system-design.md)
 
 ---
+## layout sketch
+
+![sketch layout](https://github.com/hemathens/quick-desk-odoo/blob/main/48f6c452-b21a-4da2-88a2-69b4f8fca860.png)
+
+---
 
 ## 🧱 Folder Structure
 
