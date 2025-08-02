@@ -1,4 +1,8 @@
-# 🚀 QuickDesk - AI-Enhanced Help Desk for Odoo
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Docker Build](https://img.shields.io/badge/Docker-Build-blue?logo=docker)](https://hub.docker.com/)
+[![Made with Odoo](https://img.shields.io/badge/Made%20with-Odoo-714B67?logo=odoo)](https://www.odoo.com/)
+
+# QuickDesk - AI-Enhanced Help Desk for Odoo
 
 **Website:** [quickdesk.yourdomain.com](https://quickdesk.yourdomain.com)
 
@@ -8,24 +12,26 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-1. [Description](#📄-description)
-2. [Live Demo](#🚀-live-demo)
-3. [Tech Stack](#🛠️-tech-stack)
-4. [Architecture](#🏗️-architecture)
-5. [Folder Structure](#🧱-folder-structure)
-6. [Features](#✨-features)
-7. [Use Cases](#🎯-use-cases)
-8. [Screenshots](#📸-screenshots)
-9. [Getting Started](#⚙️-getting-started)
-10. [Configuration](#🔧-configuration)
-11. [Testing](#🧪-testing)
-12. [Monitoring & Security](#🔒-monitoring--security)
-13. [Contributing](#🤝-contributing)
-14. [Roadmap](#🐛-roadmap)
-15. [Contact & Support](#📬-contact--support)
-16. [License](#⚖️-license)
+1. [Description](#description)
+2. [Live Demo](#live-demo)
+3. [Tech Stack](#tech-stack)
+4. [Architecture](#architecture)
+5. [Folder Structure](#folder-structure)
+6. [Features](#features)
+7. [Use Cases](#use-cases)
+8. [Screenshots](#screenshots)
+9. [Getting Started](#getting-started)
+10. [Configuration](#configuration)
+11. [Testing](#testing)
+12. [Monitoring & Security](#monitoring--security)
+13. [Contributing](#contributing)
+14. [Roadmap](#roadmap)
+15. [Team & Credits](#team--credits)
+16. [Contact & Support](#contact--support)
+17. [License](#license)
+
 
 ---
 
@@ -281,4 +287,4 @@ Contributions welcome! Please follow \[CONTRIBUTING.md] and the repository guide
 
 ## ⚖️ License
 
-[MIT-License©2025-drakshushi](https://creativecommons.org/licenses/by/4.0/)
+[MIT License © 2025 Drakshushi](LICENSE)
