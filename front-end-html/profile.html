@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="nav-left">
+                    <span class="logo">App Logo</span>
+                </div>
+                <div class="nav-right">
+                    <button onclick="location.href='dashboard.html'">Dashboard</button>
+                    <button onclick="location.href='search.html'">Search</button>
+                    <button onclick="location.href='settings.html'">Settings</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h1>Profile</h1>
+                    <p>Manage your personal information</p>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-sidebar">
+                        <div class="profile-avatar">
+                            <div class="avatar-placeholder">👤</div>
+                            <button class="upload-btn">Upload Photo</button>
+                        </div>
+                        <div class="profile-menu">
+                            <button class="menu-item active" onclick="showSection('personal')">Personal Info</button>
+                            <button class="menu-item" onclick="showSection('security')">Security</button>
+                            <button class="menu-item" onclick="showSection('preferences')">Preferences</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-main">
+                        <div id="personalSection" class="profile-section active">
+                            <h2>Personal Information</h2>
+                            <form id="personalForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name:</label>
+                                        <input type="text" id="firstName" name="firstName" value="John">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name:</label>
+                                        <input type="text" id="lastName" name="lastName" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone:</label>
+                                    <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">Bio:</label>
+                                    <textarea id="bio" name="bio" rows="4">Software developer with passion for creating amazing user experiences.</textarea>
+                                </div>
+                                <button type="submit" class="save-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div id="securitySection" class="profile-section">
+                            <h2>Security Settings</h2>
+                            <form id="securityForm">
+                                <div class="form-group">
+                                    <label for="currentPassword">Current Password:</label>
+                                    <input type="password" id="currentPassword" name="currentPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newPassword">New Password:</label>
+                                    <input type="password" id="newPassword" name="newPassword">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmNewPassword">Confirm New Password:</label>
+                                    <input type="password" id="confirmNewPassword" name="confirmNewPassword">
+                                </div>
+                                <button type="submit" class="save-btn">Update Password</button>
+                            </form>
+                        </div>
+
+                        <div id="preferencesSection" class="profile-section">
+                            <h2>Preferences</h2>
+                            <form id="preferencesForm">
+                                <div class="form-group">
+                                    <label for="language">Language:</label>
+                                    <select id="language" name="language">
+                                        <option value="en">English</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="fr">French</option>
+                                        <option value="de">German</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Notifications:</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" checked> Email notifications</label>
+                                        <label><input type="checkbox" checked> Push notifications</label>
+                                        <label><input type="checkbox"> SMS notifications</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="theme">Theme:</label>
+                                    <select id="theme" name="theme">
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="auto">Auto</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="save-btn">Save Preferences</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.profile-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName + 'Section').classList.add('active');
+            
+            // Add active class to clicked menu item
+            event.target.classList.add('active');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                alert('Logged out successfully!');
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Form handlers
+        document.getElementById('personalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Personal information updated successfully!');
+        });
+
+        document.getElementById('securityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmNewPassword').value;
+            
+            if (newPassword !== confirmPassword) {
+                alert('New passwords do not match!');
+                return;
+            }
+            
+            alert('Password updated successfully!');
+        });
+
+        document.getElementById('preferencesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Preferences saved successfully!');
+        });
+    </script>
+</body>
+</html>
