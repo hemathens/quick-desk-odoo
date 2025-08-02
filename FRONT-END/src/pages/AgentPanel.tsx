@@ -21,93 +21,118 @@ import {
   Timer
 } from "lucide-react";
 
-consconst fetchAgentData = async () => {
-  try {
-    const ticketsResponse = await fetch(`http://localhost:5000/dashboard/agent/tickets`, {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    });
-    const statsResponse = await fetch(`http://localhost:5000/dashboard/agent/stats`, {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    });
-
-    const ticketsData = await ticketsResponse.json();
-    const statsData = await statsResponse.json();
-
-    setTickets(ticketsData || []);
-    setStats(statsData || {});
-  } catch (error) {
-    console.error('Failed to fetch agent data:', error);
-  }
+// Mock data for development
+const mockStats = {
+  openTickets: 12,
+  resolvedToday: 5,
+  avgResponseTime: '2.5h',
+  satisfaction: '94%'
 };
+
+const mockQuestions = [
+  {
+    id: '1',
+    title: 'Unable to login to account',
+    description: 'I am having trouble logging into my account. It says invalid credentials.',
+    author: { name: 'John Doe', email: 'john@example.com' },
+    priority: 'high',
+    status: 'open',
+    tags: ['login', 'authentication'],
+    upvotes: 3,
+    answers: 1,
+    assignedTo: null,
+    createdAt: new Date().toISOString()
+  }
+];
 
 export default function AgentPanel() {
   const [user, setUser] = useState<any>(null);
-const [tickets, setTickets] = useState([]);
-const [stats, setStats] = useState(mockStats);
-const [searchQuery, setSearchQuery] = useState('');
-const [statusFilter, setStatusFilter] = useState('all');
-const [priorityFilter, setPriorityFilter] = useState('all');
-const [activeTab, setActiveTab] = useState('all');
+  const [tickets, setTickets] = useState([]);
+  const [stats, setStats] = useState(mockStats);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [priorityFilter, setPriorityFilter] = useState('all');
+  const [activeTab, setActiveTab] = useState('all');
+  const [filteredQuestions, setFilteredQuestions] = useState(mockQuestions);
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-useEffect(() => {
-  const userData = localStorage.getItem('user');
-  if (!userData) {
-    navigate('/login');
-    return;
-  }
+  const fetchAgentData = async () => {
+    try {
+      const ticketsResponse = await fetch(`http://localhost:5000/dashboard/agent/tickets`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      const statsResponse = await fetch(`http://localhost:5000/dashboard/agent/stats`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
 
-  const parsedUser = JSON.parse(userData);
-  if (parsedUser.role !== 'agent' && parsedUser.role !== 'admin') {
-    navigate('/dashboard');
-    return;
-  }
+      const ticketsData = await ticketsResponse.json();
+      const statsData = await statsResponse.json();
 
-  setUser(parsedUser);
-}, [navigate]);
+      setTickets(ticketsData || []);
+      setStats(statsData || {});
+    } catch (error) {
+      console.error('Failed to fetch agent data:', error);
+    }
+  };
 
-useEffect(() => {
-  if (user?.role === 'agent' || user?.role === 'admin') {
-    fetchAgentData();
-  }
-}, [user
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (!userData) {
+      navigate('/login');
+      return;
+    }
 
-const handleAssignToSelf = async (ticketId: string) => {
-  try {
-    await fetch('http://localhost:5000/tickets/assign', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-      body: JSON.stringify({ ticketId })
-    });
-    fetchAgentData();
-  } catch (error) {
-    console.error('Failed to assign ticket:', error);
-  }
-};
+    const parsedUser = JSON.parse(userData);
+    if (parsedUser.role !== 'agent' && parsedUser.role !== 'admin') {
+      navigate('/dashboard');
+      return;
+    }
 
-const handleUpdateStatus = async (ticketId: string, newStatus: string) => {
-  try {
-    await fetch(`http://localhost:5000/tickets/${ticketId}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-      body: JSON.stringify({ status: newStatus })
-    });
-    fetchAgentData();
-  } catch (error) {
-    console.error('Failed to update ticket status:', error);
-  }
-};
+    setUser(parsedUser);
+  }, [navigate]);
+
+  useEffect(() => {
+    if (user?.role === 'agent' || user?.role === 'admin') {
+      fetchAgentData();
+    }
+  }, [user]);
+
+  const handleAssignToSelf = async (ticketId: string) => {
+    try {
+      await fetch('http://localhost:5000/tickets/assign', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ ticketId })
+      });
+      fetchAgentData();
+    } catch (error) {
+      console.error('Failed to assign ticket:', error);
+    }
+  };
+
+  const handleUpdateStatus = async (ticketId: string, newStatus: string) => {
+    try {
+      await fetch(`http://localhost:5000/tickets/${ticketId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ status: newStatus })
+      });
+      fetchAgentData();
+    } catch (error) {
+      console.error('Failed to update ticket status:', error);
+    }
+  };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
