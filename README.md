@@ -1,9 +1,9 @@
 # 🚀 QuickDesk - AI-Enhanced Help Desk for Odoo
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green)](LICENSE) [![CI](https://github.com/Mihir-Rabari/quick-desk-odoo/actions/workflows/ci.yml/badge.svg)](https://github.com/Mihir-Rabari/quick-desk-odoo/actions) [![Docker Pulls](https://img.shields.io/docker/pulls/quickdesk/odoo)](https://hub.docker.com/r/quickdesk/odoo)
-
 **Website:** [quickdesk.yourdomain.com](https://quickdesk.yourdomain.com)
+
 **Tagline:** *"Support at the Speed of Business"*
+
 **Team Name:** *Drakshushi*
 
 ---
