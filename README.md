@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<img width="1280" height="607" alt="image" src="https://github.com/user-attachments/assets/0da34f4d-78a7-4a7d-b721-198079521c4a" />[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Docker Build](https://img.shields.io/badge/Docker-Build-blue?logo=docker)](https://hub.docker.com/)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-lightgreen?logo=mongodb)](https://www.mongodb.com/)
 [![Socket.IO](https://img.shields.io/badge/Real--time-Socket.IO-black?logo=socketdotio)](https://socket.io/)
@@ -165,8 +165,9 @@ QuickDesk tailors its experience to three main roles, each with focused UI and n
 ## 📸 Screenshots
 **Preview of dashboard**
 
-![Dashboard](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2015.09.58_0d639d97.jpg)
 ![Ticket View](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2015.09.58_ef4e7f38.jpg)
+[HomePage](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2016.03.29_246f1a46.jpg)
+![Dashboard](https://github.com/hemathens/quick-desk-odoo/blob/main/WhatsApp%20Image%202025-08-02%20at%2015.09.58_0d639d97.jpg)
 
 ---
 
