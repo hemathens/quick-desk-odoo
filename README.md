@@ -1,6 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Docker Build](https://img.shields.io/badge/Docker-Build-blue?logo=docker)](https://hub.docker.com/)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-lightgreen?logo=mongodb)](https://www.mongodb.com/)
+[![Socket.IO](https://img.shields.io/badge/Real--time-Socket.IO-black?logo=socketdotio)](https://socket.io/)
+[![Redis](https://img.shields.io/badge/Cache-Redis-D82C20?logo=redis&logoColor=white)](https://redis.io/)
 [![Made for Odoo](https://img.shields.io/badge/Made%20for-Odoo-714B67?logo=odoo)](https://www.odoo.com/)
 
 # QuickDesk - AI-Enhanced Help Desk for Odoo
