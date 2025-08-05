@@ -46,16 +46,18 @@ QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, deliverin
 
 ## 🛠️ Tech Stack (Backend & System)
 
-- **Runtime:** Node.js, Express.js  
-- **Database:** MongoDB with Mongoose ODM  
-- **Authentication:** JWT-based, role-secured (User, Agent, Admin)  
-- **Realtime:** Socket.IO  
-- **Email:** Nodemailer  
-- **Testing:** Jest + Supertest  
-- **Deployment:** Docker, Docker Compose, Kubernetes-ready  
-- **Cache/Jobs:** Redis  
-- **Monitoring:** Prometheus, Grafana, ELK Stack  
-- **Frontend (Optional):** React 18+, Tailwind CSS, Framer Motion 
+| Layer      | Technology               |
+| ---------- | ------------------------ |
+| Runtime    | Node.js + Express        |
+| Database   | MongoDB (via Mongoose)   |
+| Auth       | JWT                      |
+| Realtime   | Socket.IO                |
+| Email      | Nodemailer               |
+| Testing    | Jest + Supertest         |
+| Deployment | Docker, Docker Compose   |
+| Cache/Jobs | Redis                    |
+| Monitoring | Prometheus, Grafana, ELK |
+| Frontend   | React 18+, Tailwind CSS, Framer Motion | 
 
 ---
 
@@ -63,8 +65,8 @@ QuickDesk is a next-generation, AI-enhanced help desk module for Odoo, deliverin
 
 ```plaintext
 ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│  End Users   │      │  Support     │      │  Admins      │
-│  (Web/Email) │      │  Agents      │      │  Odoo UI     │
+│  End Users   │      │  Support     │      │   Admins     │
+│ (Web/Email)  │      │   Agents     │      │  Odoo Panel  │
 └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
        │                     │                     │
        ▼                     ▼                     ▼
